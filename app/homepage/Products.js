@@ -1,7 +1,13 @@
 import styles from './products.module.css';
 import Link from 'next/link';
+import ProductCard from '../components/ProductCard';
 
-export default function Products() {
+export default async function Products() {
+	const res = await fetch(
+		'https://dummyjson.com/products?limit=12&sortBy=rating&order=desc'
+	);
+	const data = await res.json();
+
 	return (
 		<div className={styles.products}>
 			<div className={`${styles.wrapper} container`}>
@@ -11,10 +17,12 @@ export default function Products() {
 					the highest ratings from our customers
 				</p>
 				<ul className={styles['products-list']}>
-					<p>Products go here</p>
+					{data.products.map((product) => (
+						<ProductCard key={product.id} product={product} />
+					))}
 				</ul>
 				<Link href='/products'>
-					<button>Viev all Products</button>
+					<button>View all products</button>
 				</Link>
 			</div>
 		</div>
