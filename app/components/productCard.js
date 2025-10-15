@@ -11,7 +11,9 @@ export default function productCard({ product }) {
 					width={256}
 					height={256}
 					alt={`Image of ${product.title}`}
+					style={{ width: '100%', height: 'auto' }} // зберігаємо пропорції
 				/>
+
 				<div className={styles.info}>
 					<h3>{product.title}</h3>
 					<p>$ {product.price}</p>

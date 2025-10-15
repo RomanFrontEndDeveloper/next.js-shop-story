@@ -1,7 +1,9 @@
+'use client';
 import React from 'react';
 import styles from './header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import BasketCount from './BasketCount';
 
 export default function Header() {
 	return (
@@ -27,7 +29,10 @@ export default function Header() {
 								<li>Products</li>
 							</Link>
 							<Link href='/basket'>
-								<li>Shopping Bag</li>
+								<li className={styles.basket}>
+									Shopping Bag
+									<BasketCount />
+								</li>
 							</Link>
 						</ul>
 					</nav>
