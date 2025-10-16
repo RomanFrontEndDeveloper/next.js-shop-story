@@ -1,7 +1,7 @@
 import styles from './productCard.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { formatPrice } from '../util';
 export default function productCard({ product }) {
 	return (
 		<Link href={`/product/${product.id}`}>
@@ -16,7 +16,7 @@ export default function productCard({ product }) {
 
 				<div className={styles.info}>
 					<h3>{product.title}</h3>
-					<p>$ {product.price}</p>
+					<p>{formatPrice(product.price)}</p>
 				</div>
 			</li>
 		</Link>

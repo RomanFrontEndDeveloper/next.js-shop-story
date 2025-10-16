@@ -38,14 +38,4 @@
 			margin-bottom: 20px;
 		}
 	}
-
-	.actions {
-		display: flex;
-		align-items: center;
-
-		& button {
-			padding: 0;
-			margin-left: 12px;
-		}
-	}
 }

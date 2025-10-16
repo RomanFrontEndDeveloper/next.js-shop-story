@@ -1,6 +1,7 @@
 import AddToBag from '../AddToBag';
 import styles from './page.module.css';
 import Image from 'next/image';
+import { formatPrice } from '@/app/util';
 
 export default async function page({ params }) {
 	const { id } = await params;
@@ -18,9 +19,9 @@ export default async function page({ params }) {
 			</section>
 			<section className={styles.info}>
 				<h1>{product.title}</h1>
-				<p className={styles.price}>$ {product.price}</p>
+				<p className={styles.price}>{formatPrice(product.price)}</p>
 				<p>{product.description}</p>
-				<AddToBag />
+				<AddToBag product={product} />
 			</section>
 		</div>
 	);
