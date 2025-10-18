@@ -13,12 +13,6 @@
 			margin: auto;
 			margin-bottom: 40px;
 		}
-		ul.products-list {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 12px;
-		}
 
 		& button {
 			margin-top: 40px;

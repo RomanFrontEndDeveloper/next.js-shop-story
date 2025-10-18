@@ -1,19 +1,14 @@
 import styles from './categories.module.css';
+import CategoriesList from './CategoriesList';
+import { ErrorBoundary } from '../components/ErrorBoundary';
 
-export default async function Categories() {
-	const data = await fetch('https://dummyjson.com/products/categories');
-	const categories = await data.json();
-
+export default function Categories() {
 	return (
 		<div className={styles.categories}>
 			<h2>Our Categories</h2>
-			<ul className={`${styles.wrapper} container`}>
-				{categories.map((category) => (
-					<li key={category.slug} className={styles.category}>
-						{category.name}
-					</li>
-				))}
-			</ul>
+			<ErrorBoundary fallback='Could notload categories, please refresh the Page.'>
+				<CategoriesList />
+			</ErrorBoundary>
 		</div>
 	);
 }
