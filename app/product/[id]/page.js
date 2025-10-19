@@ -1,7 +1,8 @@
-import AddToBag from '../AddToBag';
+import AddToBag from './AddToBag';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { formatPrice } from '@/app/util';
+import { formatPrice } from '../../util';
+
 import { resolve } from 'styled-jsx/css';
 
 export default async function page({ params }) {
