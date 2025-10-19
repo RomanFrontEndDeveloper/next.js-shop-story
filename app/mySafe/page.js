@@ -1,6 +1,6 @@
 import AddToBag from '../product/[id]/AddToBag';
 import Image from 'next/image';
-import { formatPrice } from '@/app/util';
+import { formatPrice } from '@/util/index.js';
 import styles from './page.module.css';
 import { notFound } from 'next/navigation';
 

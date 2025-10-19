@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import ProductCard from '../components/ProductCard';
-import Loader from '../components/Loader';
+import ProductCard from '@/components/ProductCard';
+import Loader from '@/components/Loader';
 
 export default function PaginatedList({
 	initialProducts,
@@ -12,14 +12,9 @@ export default function PaginatedList({
 	const [error, setError] = useState('');
 	const [loading, setLoading] = useState(false);
 
-	// async function sleep() {
-	// 	return new Promise((resolve) => setTimeout(resolve, 3000));
-	// }
-
 	const handleLoadMore = async () => {
 		setError('');
 		setLoading(true);
-		// await sleep();
 		try {
 			const res = await fetch(
 				`https://dummyjson.com/products${
@@ -28,12 +23,13 @@ export default function PaginatedList({
 			);
 			const data = await res.json();
 			setProducts([...products, ...data.products]);
-		} catch (error) {
+		} catch {
 			setError('Failed to load Products');
 		} finally {
 			setLoading(false);
 		}
 	};
+
 	return (
 		<>
 			{products.map((product) => (

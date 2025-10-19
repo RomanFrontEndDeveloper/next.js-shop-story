@@ -1,7 +1,7 @@
 import AddToBag from './AddToBag';
 import styles from './page.module.css';
 import Image from 'next/image';
-import { formatPrice } from '../../util';
+import { formatPrice } from '@/util';
 
 import { resolve } from 'styled-jsx/css';
 
