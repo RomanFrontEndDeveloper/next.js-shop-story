@@ -1,4 +1,5 @@
 import styles from './categoriesList.module.css';
+import Link from 'next/link';
 
 const sleep = async () => {
 	return new Promise((resolve) => setTimeout(resolve, 5000));
@@ -11,9 +12,11 @@ export default async function CategoriesList() {
 	return (
 		<ul className={`${styles.wrapper} container`}>
 			{categories.map((category) => (
-				<li key={category.slug} className={styles.category}>
-					{category.name}
-				</li>
+				<Link key={category.slug} href={`/products/${category.slug}`}>
+					<li key={category.slug} className={styles.category}>
+						{category.name}
+					</li>
+				</Link>
 			))}
 		</ul>
 	);

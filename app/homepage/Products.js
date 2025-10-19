@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ProductsList from './ProductsList';
 import { ErrorBoundary } from '../components/ErrorBoundary';
 
-export default async function Products() {
+export default async function Products({ category }) {
 	return (
 		<div className={styles.products}>
 			<div className={`${styles.wrapper} container`}>
