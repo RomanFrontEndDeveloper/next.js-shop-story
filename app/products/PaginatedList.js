@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
-import ProductCard from '@/components/ProductCard';
-import Loader from '@/components/Loader';
+
+import ProductCard from '../components/ProductCard'; // <-- відносний шлях до components
+import Loader from '../components/Loader';
 
 export default function PaginatedList({
 	initialProducts,

@@ -1,5 +1,5 @@
 import styles from './productsList.module.css';
-import ProductCard from '@/components/ProductCard';
+import ProductCard from '../components/ProductCard';
 
 export default async function ProductsList() {
 	const res = await fetch(
